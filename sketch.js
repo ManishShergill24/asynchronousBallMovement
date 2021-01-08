@@ -1,5 +1,6 @@
 var ball;
 var database,ballPosition;
+var position;
 
 function setup(){
     database = firebase.database();
@@ -28,8 +29,6 @@ function draw(){
         writePosition(0,+1);
     }
 
-
-
     drawSprites();
 }
 
@@ -38,6 +37,7 @@ function readPosition(data){
 position = data.val()
 ballPosition.x = position.x
 ballPosition.y = position.y
+console.log(position.x)
 
 }
 function ShowError(){
@@ -47,7 +47,10 @@ console.log("AN ERROR WAS FOUND")
 }
 function writePosition(x,y){
 
-database.ref('ball/position').set({'x' : position.x+x, 'y' : position.y+y})
+database.ref('ball/position').set({
 
+    'x' : position.x + x,
+    'y' : position.y + y})
+console.log("AN ERROR WAS FOUND")
 
 }
