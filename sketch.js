@@ -20,6 +20,9 @@ function draw(){
     else if(keyDown(DOWN_ARROW)){
         changePosition(0,+1);
     }
+
+    
+
     drawSprites();
 }
 
